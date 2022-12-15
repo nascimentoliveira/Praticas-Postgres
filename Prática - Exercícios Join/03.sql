@@ -1,18 +1,18 @@
-SELECT us.id, 
-  us.name,
-  co.name AS course,
-  sc.name AS school,
+SELECT "use".id, 
+  "use".name,
+  cou.name AS "course",
+  sch.name AS "school",
   educations."endDate"
 
 FROM educations 
 
-JOIN users as us
-ON educations."userId"=us.id
+JOIN users AS "use"
+ON educations."userId"="use".id
 
-JOIN schools as sc
-ON educations."schoolId"=sc.id
+JOIN schools AS sch
+ON educations."schoolId"=sch.id
 
-JOIN courses as co
-ON educations."courseId"=co.id
+JOIN courses AS cou
+ON educations."courseId"=cou.id
 
-WHERE us.id=30;
+WHERE "use".id=30;

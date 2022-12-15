@@ -1,18 +1,18 @@
-SELECT us.id, 
-  us.name,
-  ro.name AS role,
-  co.name AS company,
+SELECT "use".id, 
+  "use".name,
+  rol.name AS "role",
+  com.name AS "company",
   experiences."startDate"
 
 FROM experiences 
 
-JOIN users as us
-ON experiences."userId"=us.id
+JOIN users AS "use"
+ON experiences."userId"="use".id
 
-JOIN roles as ro
-ON experiences."roleId"=ro.id
+JOIN roles AS rol
+ON experiences."roleId"=rol.id
 
-JOIN companies as co
-ON experiences."companyId"=co.id
+JOIN companies AS com
+ON experiences."companyId"=com.id
 
-WHERE experiences."endDate" IS NULL AND us.id=50;
+WHERE experiences."endDate" IS NULL AND "use".id=50;
