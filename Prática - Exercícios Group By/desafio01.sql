@@ -1,7 +1,8 @@
 SELECT
   s.name AS school,
   c.name AS course,
-	COUNT(e."courseId") AS "studentsCount"
+	COUNT(e.id) AS "studentsCount",
+  e.status
 FROM 
   educations AS e
 JOIN 
@@ -16,5 +17,7 @@ WHERE
   e.status='ongoing' OR
   e.status='finished'
 GROUP BY 
-  s.name, c.name
-;
+  s.id, c.id, e.id
+ORDER BY
+  "studentsCount" DESC
+LIMIT 3;
