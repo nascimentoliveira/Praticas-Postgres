@@ -1,6 +1,6 @@
 SELECT 
 	u.name AS writer, 
-  COUNT(t.message) AS testimonialCount 
+  COUNT(t.message) AS "testimonialCount" 
 FROM 
   testimonials AS t
 JOIN 

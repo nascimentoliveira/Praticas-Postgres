@@ -1,5 +1,5 @@
 SELECT 
-	MAX(j.salary) AS maximumSalary, 
+	MAX(j.salary) AS "maximumSalary", 
   r.name AS "role" 
 FROM 
   jobs AS j
